@@ -1,0 +1,54 @@
+# Virtual environment
+.venv/
+env/
+env3.*
+venv/
+ENV/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code settings
+.vscode/
+
+# Logs and databases
+*.log
+log.txt
+*.sqlite3
+*.db
+test.db
+
+# Python-specific ignores
+pip-log.txt
+pip-delete-this-directory.txt
+pyvenv.cfg
+Pipfile.lock
+
+# Cache and temporary files
+.cache/
+.ipynb_checkpoints/
+.mypy_cache/
+.pytest_cache/
+htmlcov/
+dist/
+site/
+site_build/
+docs_build/
+.coverage*
+coverage.xml
+
+# Build and deployment
+.netlify/
+docs.zip
+archive.zip
+
+# Editor and OS-specific files
+.idea/
+.DS_Store
+
+# vim temporary files
+*~
+.*.sw?
+temp.txt
