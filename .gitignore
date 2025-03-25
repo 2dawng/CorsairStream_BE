@@ -52,3 +52,4 @@ archive.zip
 *~
 .*.sw?
 temp.txt
+.env
