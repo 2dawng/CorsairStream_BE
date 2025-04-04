@@ -13,12 +13,14 @@ class User(Base):
     username = Column(String(50), unique=True, index=True)
     email = Column(String(100), unique=True, index=True)
     hashed_password = Column(String(100))
+    profile_picture = Column(String(255), nullable=True)
     is_active = Column(Boolean, default=True)
     is_admin = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
     # Relationships
     watch_history = relationship("WatchHistory", back_populates="user")
+    watchlist = relationship("Watchlist", back_populates="user")
 
 
 class Watchlist(Base):
@@ -26,7 +28,7 @@ class Watchlist(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("user.id"))
-    content_id = Column(Integer)
+    content_id = Column(String(50))
     added_at = Column(DateTime, default=datetime.utcnow)
 
     # Relationships
@@ -37,7 +39,7 @@ class WatchHistory(Base):
     __tablename__ = "watch_history"
 
     user_id = Column(Integer, ForeignKey("user.id"), primary_key=True)
-    content_id = Column(Integer, primary_key=True)
+    content_id = Column(String(50), primary_key=True)
     watched_at = Column(DateTime, default=datetime.utcnow)
     # watch_duration = Column(Integer)  # How many seconds watched, dont work
     completed = Column(Boolean, default=False)
